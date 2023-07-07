@@ -11,8 +11,20 @@ class Signup_Page extends StatefulWidget {
 class _Signup_PageState extends State<Signup_Page> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return const MaterialApp(
+      home:SignUp()
+    );
+  }
+}
+
+
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
           body: Container(
         padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
         width: 500,
@@ -90,7 +102,7 @@ class _Signup_PageState extends State<Signup_Page> {
               ),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           ElevatedButton(
             style: const ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(Colors.green),
@@ -102,7 +114,6 @@ class _Signup_PageState extends State<Signup_Page> {
             child: const Text('Go back'),
           ),
         ]),
-      )),
-    );
+      ),);
   }
 }

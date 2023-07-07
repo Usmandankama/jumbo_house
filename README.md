@@ -1,10 +1,9 @@
 # jumbo_house
-
-A new Flutter project.
+Jumbo_House is a project built to aid with day to day activities mainly getting food from the comfort of your own home. 
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is also used as a stepping point for me as i prefer a project based learning
 
 A few resources to get you started if this is your first Flutter project:
 

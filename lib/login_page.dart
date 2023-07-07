@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'startup_page.dart' as startup_page;
 import 'signup_page.dart' as signup_page;
-import 'food_page.dart' as food_page;
-import 'main.dart' as HomePage;
+import 'main_page.dart' as main_page;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -15,7 +13,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(routes: <String, WidgetBuilder>{
-      "/mainPage": (BuildContext bc) => const HomePage.MyApp(),
+      // "/mainPage": (BuildContext bc) => const HomePage.MyApp(),
     }, debugShowCheckedModeBanner: false, home: const MyHome());
   }
 }
