@@ -1,14 +1,20 @@
 // ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
-class main_page extends  StatefulWidget {
+
+class main_page extends StatefulWidget {
   const main_page({super.key});
   @override
   State<main_page> createState() => __main_pageState();
 }
+
 class __main_pageState extends State<main_page> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      theme:ThemeData(
+        primarySwatch:Colors.green,
+      ),
+      home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 231, 229, 229),
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -42,13 +48,28 @@ class __main_pageState extends State<main_page> {
           ),
         ),
         body: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Search",
+                  prefixIcon: Icon(Icons.search),
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 20),
               height: 200,
               width: 500,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: const DecorationImage(
                   image: AssetImage('assets/images/bg2.jpg'),
                   fit: BoxFit.cover,
                 ),
@@ -58,7 +79,8 @@ class __main_pageState extends State<main_page> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding:const EdgeInsets.only(left:10,right:10,top:50,bottom:10),
+                    padding: const EdgeInsets.only(
+                        left: 10, right: 10, top: 50, bottom: 10),
                     child: Column(
                       children: const [
                         Text(
@@ -69,7 +91,7 @@ class __main_pageState extends State<main_page> {
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(height:10),
+                        SizedBox(height: 10),
                         Text(
                           'For as low as \$2.99',
                           style: TextStyle(
@@ -88,137 +110,6 @@ class __main_pageState extends State<main_page> {
                         onPressed: () {},
                         child: const Text("LEARN MORE"),
                       ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 700,
-              width: 500,
-              child: Column(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(top: 10),
-                    child: const Text(
-                      "MENU",
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.green,
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 10),
-                        height: 150,
-                        width: 150,
-                        color: Colors.amber,
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 10),
-                        height: 150,
-                        width: 150,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 10),
-                        height: 150,
-                        width: 150,
-                        color: Colors.yellow,
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 10),
-                        height: 150,
-                        width: 150,
-                        color: Colors.green,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 10),
-                        height: 150,
-                        width: 150,
-                        color: Colors.lightGreen,
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 10),
-                        height: 150,
-                        width: 150,
-                        color: Colors.blue,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 10),
-                        height: 150,
-                        width: 150,
-                        color: Colors.blueGrey,
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 10),
-                        height: 150,
-                        width: 150,
-                        color: Colors.amber,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 300,
-              width: 500,
-              child: Column(
-                children: [
-                  const Text(
-                    "REVIEWS",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.green,
-                    ),
-                  ),
-                  const SizedBox(
-                    height:10,
-                  ),
-                  const Text(
-                    "Write us a review",
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal:20),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 40,),
-                  Center(
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text("Send review"),
                     ),
                   ),
                 ],
@@ -243,6 +134,7 @@ class __main_pageState extends State<main_page> {
             ),
           ],
         ),
-      );
+      ),
+    );
   }
 }
