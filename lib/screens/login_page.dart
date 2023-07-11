@@ -12,9 +12,13 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(routes: <String, WidgetBuilder>{
-      // "/mainPage": (BuildContext bc) => const HomePage.MyApp(),
-    }, debugShowCheckedModeBanner: false, home: const MyHome());
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const MyHome(),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+    );
   }
 }
 
@@ -23,17 +27,9 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 238, 238, 238),
       body: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [
-            Color.fromARGB(255, 1, 27, 143),
-            Color.fromARGB(255, 9, 110, 141)
-          ],
-        )),
-        padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           children: [
             Container(
@@ -42,21 +38,21 @@ class MyHome extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.w700,
-                    color: Colors.white),
+                    color: Colors.black),
                 "JUMBO FOOD",
               ),
             ),
             const Text(
               "Taste the difference",
               style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white),
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+              ),
               textAlign: TextAlign.center,
             ),
             Container(
               margin: const EdgeInsets.only(top: 20, bottom: 5),
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 5),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
@@ -65,20 +61,23 @@ class MyHome extends StatelessWidget {
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: "Username",
+                  prefixIcon: Icon(Icons.person),
                 ),
               ),
             ),
             Container(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 5),
               margin: const EdgeInsets.only(top: 20, bottom: 5),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: const TextField(
+                obscureText: true,
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: "Password",
+                  prefixIcon: Icon(Icons.lock),
                 ),
               ),
             ),
@@ -98,7 +97,6 @@ class MyHome extends StatelessWidget {
             const SizedBox(height: 10),
             ElevatedButton(
               style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(Colors.green),
                 padding: MaterialStatePropertyAll(
                     EdgeInsets.only(left: 112, right: 112)),
               ),
@@ -106,7 +104,7 @@ class MyHome extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const signup_page.Signup_Page()),
+                      builder: (context) => const main_page.main_page()),
                 );
               },
               child: const Text("Log in"),
@@ -116,10 +114,18 @@ class MyHome extends StatelessWidget {
             ),
             ElevatedButton(
               style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(Colors.blue),
                 padding: MaterialStatePropertyAll(
                     EdgeInsets.only(left: 80, right: 80)),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const main_page.main_page(),
+                  ),
+                );
+              },
               child: const Text("Sign with Google"),
             ),
             const SizedBox(
@@ -129,17 +135,16 @@ class MyHome extends StatelessWidget {
               margin: const EdgeInsets.only(left: 50),
               child: Row(
                 children: [
-                  const Text("You dont have an account?",
-                      style: TextStyle(
-                        color: Colors.white,
-                      )),
+                  const Text(
+                    "You dont have an account?",
+                  ),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                const signup_page.Signup_Page()),
+                          builder: (context) => const signup_page.Signup_Page(),
+                        ),
                       );
                     },
                     style: const ButtonStyle(

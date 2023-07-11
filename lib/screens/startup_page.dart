@@ -1,9 +1,7 @@
 // ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
-import 'startup_page.dart' as startup_page;
 import 'signup_page.dart' as signup_page;
 import 'login_page.dart' as login_page;
-import 'food_page.dart' as food_page;
 
 class startupPage extends StatefulWidget {
   const startupPage({super.key});
@@ -73,7 +71,14 @@ class _MyHomeState extends State<MyHome> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const signup_page.Signup_Page()),
+                    );
+                  },
                   style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(Colors.green),
                     elevation: MaterialStatePropertyAll(20),
@@ -86,8 +91,8 @@ class _MyHomeState extends State<MyHome> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                              const signup_page.Signup_Page()),
+                        builder: (context) => const login_page.LoginPage(),
+                      ),
                     );
                   },
                   style: const ButtonStyle(

@@ -1,12 +1,11 @@
+// ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
-class _main_pageState extends  StatefulWidget {
-  const _main_pageState({super.key});
-
+class main_page extends  StatefulWidget {
+  const main_page({super.key});
   @override
-  State<_main_pageState> createState() => __main_pageStateState();
+  State<main_page> createState() => __main_pageState();
 }
-
-class __main_pageStateState extends State<_main_pageState> {
+class __main_pageState extends State<main_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
