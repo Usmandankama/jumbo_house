@@ -23,7 +23,6 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.green),
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 238, 238, 238),
         resizeToAvoidBottomInset: false,
