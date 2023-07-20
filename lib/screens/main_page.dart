@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
+import '../widgets/food_card.dart';
 
 class main_page extends StatefulWidget {
   const main_page({super.key});
@@ -68,21 +69,16 @@ class __main_pageState extends State<main_page> {
                 ),
               ),
             ),
-            // Container(
-            //   margin: const EdgeInsets.only(top: 20),
-            //   height: 100,
-            //   width: 20,
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(20),
-            //     image: const DecorationImage(
-            //       image: AssetImage('assets/images/bg2.jpg'),
-            //       fit: BoxFit.cover,
-            //     ),
-            //   ),
-            //   // color: Colors.black,
-            //   child: Text(''),
-            // ),
             const SizedBox(height: 20),
+            const Text(
+              "Food Menu",
+              style: TextStyle(
+                fontSize: 30,
+                color: Color.fromARGB(255, 34, 34, 34),
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            const SizedBox(height: 30),
             Container(
               height: 120,
               decoration: BoxDecoration(
@@ -164,7 +160,7 @@ class __main_pageState extends State<main_page> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Container(
               height: 120,
               decoration: BoxDecoration(
@@ -246,6 +242,20 @@ class __main_pageState extends State<main_page> {
                 ],
               ),
             ),
+            const SizedBox(height:20),
+            const Text(
+              "Popular",
+              style: TextStyle(
+                fontSize: 30,
+                color: Color.fromARGB(255, 34, 34, 34),
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            const SizedBox(height:20),
+            DescriptionCard(),
+            
+            const SizedBox(height:20),
+            DescriptionCard(),
             Container(
               margin: const EdgeInsets.only(top: 20),
               height: 200,
