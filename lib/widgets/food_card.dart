@@ -1,67 +1,79 @@
 import 'package:flutter/material.dart';
 
-class DescriptionCard extends StatelessWidget{
-  String? foodName, price, discount,imagePath;
-  DescriptionCard({super.key});
+class DescriptionCard extends StatelessWidget {
+  String? _image, _foodName, _price;
+
+  DescriptionCard(
+    String image,
+    foodname,
+    price,
+  ) {
+    _image = image;
+    _foodName = foodname;
+    _price = price;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       decoration: const BoxDecoration(
-        color: Colors.white, 
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(25),
+          bottomLeft: Radius.circular(25),
+        ),
       ),
       height: 120,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            margin: const EdgeInsets.only(left: 10, top: 10),
+            padding: const EdgeInsets.only(left: 20, top: 15),
             child: Column(
               children: [
                 Text(
-                  "$foodName",
-                  style: TextStyle(
+                  "$_foodName",
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                     color: Color.fromARGB(255, 34, 34, 34),
                     fontFamily: "Helvetica",
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(left: 0),
-                  child: Row(
-                    children:[
-                      Text(
-                        "\$$discount",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromARGB(255, 34, 34, 34),
-                          fontFamily: "Helvetica",
-                        ),
+                Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Icon(Icons.star,color: Color.fromARGB(255, 214, 196, 33)),
+                    Text(
+                      "4.6",
+                      style: TextStyle(
+                        fontSize: 18,
                       ),
-                      SizedBox(width: 5,),
-                      Text("70% off",style: TextStyle(
-                        color: Colors.green,
-                      ),)
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 ElevatedButton(
+                  style: const ButtonStyle(),
                   onPressed: () {},
-                  child: const Text("Add"),
+                  child: Text(
+                    '\$$_price',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
-          Container(
+          SizedBox(
             height: 120,
             width: 120,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                image: AssetImage('$imagePath'),
-                fit: BoxFit.cover,
-              ),
+            child: Image.asset(
+              '$_image',
+              width: 120,
+              filterQuality: FilterQuality.high,
+              fit: BoxFit.cover,
             ),
           ),
         ],

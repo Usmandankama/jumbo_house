@@ -54,6 +54,7 @@ class __main_pageState extends State<main_page> {
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           children: [
             Container(
+              color: Colors.green,
               child: Container(
                 height: 50,
                 decoration: BoxDecoration(
@@ -242,7 +243,7 @@ class __main_pageState extends State<main_page> {
                 ],
               ),
             ),
-            const SizedBox(height:20),
+            const SizedBox(height: 20),
             const Text(
               "Popular",
               style: TextStyle(
@@ -251,17 +252,32 @@ class __main_pageState extends State<main_page> {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            const SizedBox(height:20),
-            DescriptionCard(),
-            
-            const SizedBox(height:20),
-            DescriptionCard(),
+            const SizedBox(height: 20),
+            DescriptionCard('assets/images/2.jpg',"Buritto", "35"),
+            const SizedBox(height: 20),
+            DescriptionCard('assets/images/3.jpg',"Pizza", "60"),
+            const SizedBox(height: 20),
+            DescriptionCard('assets/images/4.jpg',"Burger", "40"),
+            const SizedBox(height: 20),
+            const SizedBox(height: 20),
+            DescriptionCard('assets/images/hotpot.jpg',"HotPot", "135"),
+            const SizedBox(height: 20),
+            DescriptionCard('assets/images/vegan1.jpg',"Ramen", "12"),
+            const SizedBox(height: 20),
+            DescriptionCard('assets/images/bg2.jpg',"Burger", "400"),
+            const SizedBox(height: 20),
             Container(
               margin: const EdgeInsets.only(top: 20),
-              height: 200,
+              height: 250,
               decoration: BoxDecoration(
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(5),
+                image:  const DecorationImage(
+                  image: AssetImage('assets/images/bgimage.jpg'),
+                  fit:BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                  // alignment: Alignment.bottomRight,
+                ),
               ),
             ),
           ],

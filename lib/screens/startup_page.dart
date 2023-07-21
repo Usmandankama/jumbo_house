@@ -2,12 +2,14 @@
 import 'package:flutter/material.dart';
 import 'signup_page.dart' as signup_page;
 import 'login_page.dart' as login_page;
+
 class startupPage extends StatefulWidget {
   const startupPage({super.key});
 
   @override
   State<startupPage> createState() => _startupPageState();
 }
+
 class _startupPageState extends State<startupPage> {
   @override
   Widget build(BuildContext context) {
@@ -24,12 +26,14 @@ class _startupPageState extends State<startupPage> {
     );
   }
 }
+
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
 
   @override
   State<MyHome> createState() => _MyHomeState();
 }
+
 class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
@@ -61,7 +65,7 @@ class _MyHomeState extends State<MyHome> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(left: 85, top: 30),
+            padding: const EdgeInsets.only(left: 75, top: 30),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -70,8 +74,8 @@ class _MyHomeState extends State<MyHome> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                              const signup_page.Signup_Page()),
+                        builder: (context) => const signup_page.Signup_Page(),
+                      ),
                     );
                   },
                   style: const ButtonStyle(
@@ -80,7 +84,7 @@ class _MyHomeState extends State<MyHome> {
                   ),
                   child: const Text("SIGN UP"),
                 ),
-                const SizedBox(width: 20),
+                const SizedBox(width: 50),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -95,6 +99,7 @@ class _MyHomeState extends State<MyHome> {
                     foregroundColor: MaterialStatePropertyAll(
                         Color.fromARGB(255, 41, 116, 41)),
                     elevation: MaterialStatePropertyAll(20),
+                  
                   ),
                   child: const Text("SIGN IN"),
                 ),
